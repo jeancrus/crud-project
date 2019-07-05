@@ -110,8 +110,8 @@ export default class UserCrud extends Component {
 
     renderTable() {
         return (
-            <table className="table mt-4">
-                <thead>
+            <table className="table mt-4 table-striped">
+                <thead className="thead-dark">
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
@@ -130,14 +130,14 @@ export default class UserCrud extends Component {
         return this.state.list.map(user => {
             return (
                 <tr key={user.id}>
-                    <td>{user.id}</td>
+                    <th>{user.id}</th>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
                     <td>
                         <button className="btn btn-warning" onClick={e => this.load(user)}>
                             <i className="fa fa-pencil"></i>
                         </button>
-                        <button className="btn btn-danger ml-2" onClick={e => this.remove(user)}>
+                        <button className="btn btn-danger ml-sm-2" onClick={e => this.remove(user)}>
                             <i className="fa fa-trash"></i>
                         </button>
                     </td>
